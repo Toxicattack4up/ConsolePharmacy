@@ -2,8 +2,8 @@
 #include <stdexcept>
 #include <iostream>
 
-Medicine::Medicine(const std::string& name, const std::string& manufacturer, double price, int stockQuantity, const std::string& expirationDate)
-    : name(name), manufacturer(manufacturer), price(price), stockQuantity(stockQuantity), expirationDate(expirationDate) {
+Medicine::Medicine(const std::string& name, const std::string& manufacturer, double price, int stockQuantity, const std::string& expirationDate, bool prescriptionRequired)
+    : name(name), manufacturer(manufacturer), price(price), stockQuantity(stockQuantity), expirationDate(expirationDate), prescriptionRequired(prescriptionRequired) {
 }
 
 std::string Medicine::getName() const {
@@ -36,8 +36,25 @@ bool Medicine::isExpired() const {
     return expirationDate < "2025-01-01"; // Упрощённая проверка
 }
 
+bool Medicine::isPrescriptionRequired() const {
+    return prescriptionRequired;
+}
+
+void Medicine::setPrescriptionRequired(bool required) {
+    prescriptionRequired = required;
+}
+
 void Medicine::displayInfo() const {
     std::cout << "Лекарство: " << name << "\nПроизводитель: " << manufacturer
         << "\nЦена: $" << price << "\nКоличество на складе: " << stockQuantity
-        << "\nСрок годности: " << expirationDate << "\n";
+        << "\nСрок годности: " << expirationDate
+        << "\nТребуется рецепт: " << (prescriptionRequired ? "Да" : "Нет") << "\n";
+}
+
+std::string Medicine::getManufacturer() const {
+    return manufacturer;
+}
+
+std::string Medicine::getExpirationDate() const {
+    return expirationDate;
 }

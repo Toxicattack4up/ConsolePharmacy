@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include <iostream>
 
-Sale::Sale(const Customer& customer) : customer(customer), totalPrice(0.0) {}
+Sale::Sale(const Customer& customer, Logger& logger) : customer(customer), totalPrice(0.0), logger(logger) {}
 
 void Sale::addItem(Medicine& medicine, int quantity) {
     if (quantity <= 0) throw std::invalid_argument("Количество должно быть положительным.");
@@ -22,4 +22,5 @@ void Sale::displayReceipt() const {
         std::cout << item.first.getName() << " x" << item.second << " @ $" << item.first.getPrice() << " за штуку\n";
     }
     std::cout << "Общая сумма: $" << totalPrice << "\n";
+    logger.log("Продажа совершена. Общая сумма: $" + std::to_string(totalPrice));
 }

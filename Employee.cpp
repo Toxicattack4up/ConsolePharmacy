@@ -2,16 +2,8 @@
 #include <stdexcept>
 #include <iostream>
 
-Employee::Employee(const std::string& name, const std::string& position, double salary)
-    : name(name), position(position), salary(salary) {
-}
-
-std::string Employee::getName() const {
-    return name;
-}
-
-void Employee::setName(const std::string& newName) {
-    name = newName;
+Employee::Employee(const std::string& username, const std::string& password, const std::string& position, double salary)
+    : User(username, password, "employee"), position(position), salary(salary) {
 }
 
 std::string Employee::getPosition() const {
@@ -32,5 +24,5 @@ void Employee::setSalary(double newSalary) {
 }
 
 void Employee::displayInfo() const {
-    std::cout << "Сотрудник: " << name << "\nДолжность: " << position << "\nЗарплата: $" << salary << "\n";
+    std::cout << "Сотрудник: " << getUsername() << "\nДолжность: " << position << "\nЗарплата: $" << salary << "\n";
 }
