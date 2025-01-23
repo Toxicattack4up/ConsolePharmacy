@@ -128,6 +128,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsolePharmacy.cpp" />
+    <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="Medicine.cpp" />
+    <ClCompile Include="Prescription.cpp" />
+    <ClCompile Include="Sale.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Customer.h" />
+    <ClInclude Include="Employee.h" />
+    <ClInclude Include="Medicine.h" />
+    <ClInclude Include="Prescription.h" />
+    <ClInclude Include="Sale.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
