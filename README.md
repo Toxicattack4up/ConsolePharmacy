@@ -164,27 +164,49 @@
 ## Структура проекта
 pharmacy_management_system/
 ├── CMakeLists.txt
+
 ├── main.cpp
+
 ├── Medicine.h
+
 ├── Medicine.cpp
+
 ├── Customer.h
+
 ├── Customer.cpp
+
 ├── Prescription.h
+
 ├── Prescription.cpp
+
 ├── Employee.h
+
 ├── Employee.cpp
+
 ├── Administrator.h
+
 ├── Administrator.cpp
+
 ├── Sale.h
+
 ├── Sale.cpp
+
 ├── User.h
+
 ├── User.cpp
+
 ├── utils.h
+
 ├── utils.cpp
+
 ├── logger.h
+
 ├── logger.cpp
+
 ├── medicine_storage.h
+
 └── medicine_storage.cpp
+
 
 
 ## Как работает программа
